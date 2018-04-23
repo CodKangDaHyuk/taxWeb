@@ -12,7 +12,7 @@ using System.Collections.Specialized;
 namespace codTaxWeb.WebService
 {
     /// <summary>
-    /// wsMember의 요약 설명입니다...........,,,,,,,,,,,,,,,,,,
+    /// wsMember의 요약 설명입니다...........,,,,,,,,,,,,,,,,,,;;;;;;;;;;;;;;;;;;
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
