@@ -12,7 +12,7 @@ using System.Collections.Specialized;
 namespace codTaxWeb.WebService
 {
     /// <summary>
-    /// wsMember의 요약 설명입니다.
+    /// wsMember의 요약 설명입니다...........
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -21,7 +21,7 @@ namespace codTaxWeb.WebService
     [System.Web.Script.Services.ScriptService]
     public class wsMember : System.Web.Services.WebService
     {
-        #region taxWeb -> codAPI 차주 로그인 (로그인)
+        #region taxWeb -> codAPI 차주 로그인 (로그인).
         [WebMethod]
         public string wsfnDriverLogin(Models.memberCheck p_objUserLogin)
         {
