@@ -18,7 +18,7 @@ namespace Common.Page
 
         #region 로그인여부 체크 (IsLogin)
         /// <summary>
-        /// 로그인이 되어 있는지를 체크한다.
+        /// 로그인이 되어 있는지를 체크한다.......
         /// </summary>
         /// <returns>로그인이 되어 있을시 true, 안되어 있을경우 false</returns>
         public static bool IsLogin()

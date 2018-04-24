@@ -20,7 +20,7 @@ namespace Common
 
         public static string Driver_Regist { get; set; }
 
-        //COD API 정보
+        //COD API 정보.....
         public static string ExtAPI_URL { get; set; }
 
         public static string Sftp_URL { get; set; }

@@ -135,7 +135,7 @@ namespace codTaxWeb.Controllers.API
                                     {                                        
                                         string errKey = "a" + retVal;
                                         errMsg = HttpContext.GetGlobalResourceObject("a", errKey).ToString();
-                                        retString = "{\"Status_Code\": \"205\", \"Status_Msg\":\"세금계산서 발급실패 : " + errMsg + "\", \"Result_Data\":[]}";
+                                        retString = "{\"Status_Code\": \"" + retVal + "\", \"Status_Msg\":\"" + errMsg + "\", \"Result_Data\":[]}";
 
                                         return new HttpResponseMessage()
                                         {

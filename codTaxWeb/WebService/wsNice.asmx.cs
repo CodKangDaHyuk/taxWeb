@@ -14,7 +14,7 @@ using System.Data;
 namespace codTaxWeb.WebService
 {
     /// <summary>
-    /// wsNice의 요약 설명입니다.
+    /// wsNice의 요약 설명입니다.........
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]

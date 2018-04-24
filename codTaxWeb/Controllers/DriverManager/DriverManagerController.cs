@@ -46,7 +46,7 @@ namespace codTaxWeb.Controllers.DriverManager
                         niceData.userId + "," +
                         niceData.certPw + "," +
                         niceData.expireDt);
-                }                
+                }
             }
             catch (Exception exp)
             {
