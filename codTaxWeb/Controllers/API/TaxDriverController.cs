@@ -132,7 +132,11 @@ namespace codTaxWeb.Controllers.API
                                     }
                                     //6-2. nice 세금계산서 발급 했더니 실패
                                     else
-                                    {                                        
+                                    {
+                                        //API 에도 에러 메시지를 던져 주어야 한다. 2018.05.02 업무 예정
+
+                                        //API 에도 에러 메시지를 던져 주어야 한다. -- 끝
+
                                         string errKey = "a" + retVal;
                                         errMsg = HttpContext.GetGlobalResourceObject("a", errKey).ToString();
                                         retString = "{\"Status_Code\": \"" + retVal + "\", \"Status_Msg\":\"" + errMsg + "\", \"Result_Data\":[]}";
