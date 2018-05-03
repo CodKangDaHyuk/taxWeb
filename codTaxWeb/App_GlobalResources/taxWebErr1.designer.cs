@@ -131,5 +131,59 @@ namespace Resources {
                 return ResourceManager.GetString("a206", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   DB Error과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string a500 {
+            get {
+                return ResourceManager.GetString("a500", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   찾을 수 없는 핸드폰 번호입니다과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string a501 {
+            get {
+                return ResourceManager.GetString("a501", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   패스워드(생년월일)가 일치하지 않습니다과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string a502 {
+            get {
+                return ResourceManager.GetString("a502", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   회원님은 사용할 수 없는 상태입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string a505 {
+            get {
+                return ResourceManager.GetString("a505", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   회원님은 가입승인을 받으시기 바랍니다.(관리자에게 문의바랍니다.)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string a506 {
+            get {
+                return ResourceManager.GetString("a506", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   파라메터에러과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string a517 {
+            get {
+                return ResourceManager.GetString("a517", resourceCulture);
+            }
+        }
     }
 }

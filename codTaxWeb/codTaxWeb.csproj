@@ -322,6 +322,7 @@
     <Content Include="Views\DriverManager\Nice_Regist.cshtml" />
     <Content Include="Views\DriverManager\certification_finish.cshtml" />
     <Content Include="Views\DriverManager\expireDt_success.cshtml" />
+    <Content Include="Views\DriverManager\Error.cshtml" />
     <None Include="Web References\NiceSoapService\DTIService.wsdl" />
     <Content Include="Web References\NiceSoapService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -331,7 +332,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\font\" />
-    <Folder Include="Views\UserManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

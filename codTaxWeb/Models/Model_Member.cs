@@ -92,6 +92,18 @@ namespace Models
     }
     #endregion
 
+    #region taxWeb -> CodAPI 세금계산서 발행 에러 통보
+    public class NiceCertification_Error_Send
+    {
+        public string url { get; set; }
+
+        public string phone_no { get; set; }
+        public string birth_day { get; set; }
+        public int tb_idx { get; set; }
+        public string nice_code { get; set; }
+    }
+    #endregion
+
     #region TaxWeb -> NiceData 회원가입 폼
     public class RegistForm_Client
     {

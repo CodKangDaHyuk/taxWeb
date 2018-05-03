@@ -133,18 +133,46 @@ namespace codTaxWeb.Controllers.API
                                     //6-2. nice 세금계산서 발급 했더니 실패
                                     else
                                     {
-                                        //API 에도 에러 메시지를 던져 주어야 한다. 2018.05.02 업무 예정
+                                        //API 에도 에러 메시지를 던져 주어야 한다. 
+                                        Models.NiceCertification_Error_Send bill_error_send = new Models.NiceCertification_Error_Send();
+                                        bill_error_send.phone_no = niceCertificationSubmitClient.phone_no;
+                                        bill_error_send.birth_day = niceCertificationSubmitClient.birth_day;
+                                        bill_error_send.tb_idx = tb_idx;
+                                        bill_error_send.nice_code = retVal;
 
+                                        //codAPI 에 에러 코드를 저장
+                                        bill_error_send.url = Common.ConnectionString.ExtAPI_URL + "/driver/tax/update/no_billno";
+                                        retString = WebProtocols.EXtAPI.bill_error_send(bill_error_send);
+                                        retString = retString.Replace("\n", "");
+                                        retString = retString.Replace("\\\"", "\"");
+                                        retString = retString.Replace("\\\"{", "{");
+                                        retString = retString.Replace("}\\\"", "}");
                                         //API 에도 에러 메시지를 던져 주어야 한다. -- 끝
+                                        Models.Basic_Json_Format error_send = Common.Lib.cJSON._DeSerialize<Models.Basic_Json_Format>(retString);
 
-                                        string errKey = "a" + retVal;
-                                        errMsg = HttpContext.GetGlobalResourceObject("a", errKey).ToString();
-                                        retString = "{\"Status_Code\": \"" + retVal + "\", \"Status_Msg\":\"" + errMsg + "\", \"Result_Data\":[]}";
-
-                                        return new HttpResponseMessage()
+                                        //7-11. codAPI 에 에러를 저장하고 리턴값(성공)
+                                        if (error_send.Status_Code == "200") //nice로 부터 받은 에러 값을 그대로 클라이언트에 전달 한다.
                                         {
-                                            Content = new StringContent(retString, System.Text.Encoding.UTF8, "application/json")
-                                        };
+                                            string errKey = "a" + retVal;
+                                            errMsg = HttpContext.GetGlobalResourceObject("a", errKey).ToString();
+                                            retString = "{\"Status_Code\": \"" + retVal + "\", \"Status_Msg\":\"" + errMsg + "\", \"Result_Data\":[]}";
+
+                                            return new HttpResponseMessage()
+                                            {
+                                                Content = new StringContent(retString, System.Text.Encoding.UTF8, "application/json")
+                                            };
+                                        }
+                                        //7-12. codAPI 에 에러를 저장하고 리턴값(실패)
+                                        else
+                                        {
+                                            string errKey = "a" + error_send.Status_Code;
+                                            errMsg = HttpContext.GetGlobalResourceObject("taxWebErr", errKey).ToString();
+                                            retString = "{\"Status_Code\": \"" + error_send.Status_Code + "\", \"Status_Msg\":\"" + errMsg + "\", \"Result_Data\":[]}";
+                                            return new HttpResponseMessage()
+                                            {
+                                                Content = new StringContent(retString, System.Text.Encoding.UTF8, "application/json")
+                                            };
+                                        }                                        
                                     }//세금계산서 발급 실패5-1
                                     //
                                 }

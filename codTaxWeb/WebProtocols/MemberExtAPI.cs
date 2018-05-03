@@ -46,6 +46,20 @@ namespace codTaxWeb.WebProtocols
             string postData = DictToString(parms);
             return SendPostData(url, postData);
         }
+        //세금계산서 발급 후 billno 를 API 에 저장하자.
+        public static string bill_error_send(Models.NiceCertification_Error_Send formData)
+        {
+            string url = formData.url;
+            var parms = new Dictionary<string, string>();
+
+            parms.Add("phone_no", formData.phone_no.ToString());
+            parms.Add("birth_day", formData.birth_day.ToString());
+            parms.Add("tb_idx", formData.tb_idx.ToString());
+            parms.Add("nice_code", formData.nice_code.ToString());
+
+            string postData = DictToString(parms);
+            return SendPostData(url, postData);
+        }
         //나이스 회원가입 후 정보 저장
         public static string niceRegistSave(Models.RegistForm_Client formData)
         {

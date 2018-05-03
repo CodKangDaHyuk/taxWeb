@@ -1,7 +1,14 @@
 ﻿$(document).ready(function () {
+    //암호화 테스트
     //var p_retUrl = niceEncodingString("http://localhost:60201/DriverManager/certification_finish");
-    var p_retUrl = niceEncodingString("http://dev.tax.codlabs.com:8020/DriverManager/certification_finish");
-    console.log(p_retUrl);
+    //var p_retUrl = niceEncodingString("http://dev.tax.codlabs.com:8020/DriverManager/certification_finish");
+    //console.log(p_retUrl);
+
+    if (isMobile()) {
+        alert("PC 에서 접속해 주세요");
+        location.href = "/DriverManager/Error";	//에러페이지
+    } 
+
     //로그인 버튼 클릭
     $("#btnLogin").click(function () {        
         LoginChk();
@@ -14,6 +21,17 @@
         }
     });
 });
+
+function isMobile() {
+    var UserAgent = navigator.userAgent;
+
+    if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 //로그인 체크
 function LoginChk() {

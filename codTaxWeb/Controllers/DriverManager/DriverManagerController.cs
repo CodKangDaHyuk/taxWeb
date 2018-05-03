@@ -14,6 +14,12 @@ namespace codTaxWeb.Controllers.DriverManager
         {
             return View();
         }
+        // 에러페이지
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult Error()
+        {
+            return View();
+        }
         // 회원가입 링크 : Post 방식        
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Nice_Regist(Models.RegistForm_Client registData)

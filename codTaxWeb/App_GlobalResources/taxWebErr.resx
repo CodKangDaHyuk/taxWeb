@@ -141,4 +141,22 @@
   <data name="a206" xml:space="preserve">
     <value>인증서 유효기간이 지났습니다.</value>
   </data>
+  <data name="a500" xml:space="preserve">
+    <value>DB Error</value>
+  </data>
+  <data name="a501" xml:space="preserve">
+    <value>찾을 수 없는 핸드폰 번호입니다</value>
+  </data>
+  <data name="a502" xml:space="preserve">
+    <value>패스워드(생년월일)가 일치하지 않습니다</value>
+  </data>
+  <data name="a505" xml:space="preserve">
+    <value>회원님은 사용할 수 없는 상태입니다.</value>
+  </data>
+  <data name="a506" xml:space="preserve">
+    <value>회원님은 가입승인을 받으시기 바랍니다.(관리자에게 문의바랍니다.)</value>
+  </data>
+  <data name="a517" xml:space="preserve">
+    <value>파라메터에러</value>
+  </data>
 </root>
